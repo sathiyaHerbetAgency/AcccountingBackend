@@ -1,6 +1,7 @@
 import {createConnection } from 'mongoose';
-  const url="mongodb+srv://<sathiya>:<sathiya@cluster0.ehydi.mongodb.net/";
-var con1=createConnection(url,
+// const url="mongodb+srv://<sathiya>:<sathiya@cluster0.ehydi.mongodb.net/";
+
+var con1=createConnection('mongodb://0.0.0.0:27017/InvoiceManager',
   {
     useNewUrlParser: true,
 
