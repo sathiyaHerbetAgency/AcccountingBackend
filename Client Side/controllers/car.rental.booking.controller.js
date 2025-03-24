@@ -19,7 +19,7 @@ import { clientdetails,invoicedetails } from "../models/invoice.model.js";
           res.status(200).json(store)
       }catch(err){
           console.log(err)
-          res.status(400).json({message:data})
+          res.status(400).json({message:err})
       }
   }
   const getAllClientData = async (req, res) => {
