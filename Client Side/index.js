@@ -5,7 +5,10 @@ import compression from 'compression';
 import morgan from 'morgan';
 import cors from 'cors';
 import apirouter from './routes/api.route.js';
+import dotenv from 'dotenv';
+
 const app = express();
+dotenv.config();
 app.use(cors({
     origin: ['http://localhost:3000','http://localhost:3001'],
     credentials: true 

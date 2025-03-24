@@ -1,5 +1,5 @@
 import { Schema } from 'mongoose';
-import con from '../db/db.js';
+import invoiceManagerConnection from '../db/db.js';
 
 let ClientSchema=new Schema(
     {
@@ -159,15 +159,15 @@ let ClientSchema=new Schema(
     });
 
 
-var Account=con.model('Account', accountSchema);
-var JournalEntry=con.model('JournalEntry', journalEntrySchema);
+var Account=invoiceManagerConnection.model('Account', accountSchema);
+var JournalEntry=invoiceManagerConnection.model('JournalEntry', journalEntrySchema);
 
 
-var accountingMapping=con.model("mappingdetails",accountMappingSchema)
-var clientdetails = con.model("clientdetails",ClientSchema);
-var characcdetails = con.model("chartAcc",ChartAccSchema);
-var invoicedetails = con.model("invoicedetails",InvoiceSchema);
-var adminlogin = con.model("adminlogin", AdminSchema);
+var accountingMapping=invoiceManagerConnection.model("mappingdetails",accountMappingSchema)
+var clientdetails = invoiceManagerConnection.model("clientdetails",ClientSchema);
+var characcdetails = invoiceManagerConnection.model("chartAcc",ChartAccSchema);
+var invoicedetails = invoiceManagerConnection.model("invoicedetails",InvoiceSchema);
+var adminlogin = invoiceManagerConnection.model("adminlogin", AdminSchema);
 
 
 
