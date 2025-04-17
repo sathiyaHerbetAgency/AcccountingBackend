@@ -20,5 +20,6 @@ app.use(compression());
 const port = 8083;
 //router
 app.use('/clients/api', apirouter);
+app.get('/',(req,res)=>res.send("Helloss"));
 app.get('/clients', (req, res) => res.send('Hello Booking!'));
 app.listen(port, () => console.log(`Invoice service listening on port ${port}!`));

@@ -13,7 +13,7 @@ app.use(cors({
 }));
 app.use(morgan('tiny'));
 app.use(compression());
-const port = 8080;
+const port = 8081;
 //micro services
 
 // app.use('/authentication', createProxyMiddleware({ target: process.env.Authentication, changeOrigin: true }));
