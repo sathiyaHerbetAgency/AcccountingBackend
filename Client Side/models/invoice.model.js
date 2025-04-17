@@ -1,6 +1,6 @@
 import { Schema } from 'mongoose';
 import invoiceManagerConnection from '../db/db.js';
-
+import mongoose from 'mongoose'
 let ClientSchema=new Schema(
     {
         client_id:{ type: String, unique: true, required: true},
@@ -159,15 +159,15 @@ let ClientSchema=new Schema(
     });
 
 
-var Account=invoiceManagerConnection.model('Account', accountSchema);
-var JournalEntry=invoiceManagerConnection.model('JournalEntry', journalEntrySchema);
+var Account=mongoose.model('Account', accountSchema);
+var JournalEntry=mongoose.model('JournalEntry', journalEntrySchema);
 
 
-var accountingMapping=invoiceManagerConnection.model("mappingdetails",accountMappingSchema)
-var clientdetails = invoiceManagerConnection.model("clientdetails",ClientSchema);
-var characcdetails = invoiceManagerConnection.model("chartAcc",ChartAccSchema);
-var invoicedetails = invoiceManagerConnection.model("invoicedetails",InvoiceSchema);
-var adminlogin = invoiceManagerConnection.model("adminlogin", AdminSchema);
+var accountingMapping=mongoose.model("mappingdetails",accountMappingSchema)
+var clientdetails = mongoose.model("clientdetails",ClientSchema);
+var characcdetails = mongoose.model("chartAcc",ChartAccSchema);
+var invoicedetails = mongoose.model("invoicedetails",InvoiceSchema);
+var adminlogin = mongoose.model("adminlogin", AdminSchema);
 
 
 

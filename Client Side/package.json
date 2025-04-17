@@ -22,11 +22,13 @@
     "dotenv": "^16.4.7",
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.15.0",
     "mongoose": "^6.8.4",
     "morgan": "^1.10.0",
     "nodemailer": "^6.9.1",
     "nodemon": "^2.0.20",
     "npm": "^9.6.2",
-    "pdfkit": "^0.13.0"
+    "pdfkit": "^0.13.0",
+    "punycode": "^2.3.1"
   }
 }

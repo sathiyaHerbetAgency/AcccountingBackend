@@ -7,6 +7,7 @@ import { clientdetails,invoicedetails } from "../models/invoice.model.js";
         const existingEmail = await clientdetails.findOne({ client_email: data.client_email });
 
         if (existingEmail) {
+          console.log(existingEmail)
           return res.status(400).json({ message: "Email already exists" });
         }
     
