@@ -10,7 +10,7 @@ import dotenv from 'dotenv';
   const app = express();
 dotenv.config();
 app.use(cors({
-    origin: ['https://kiraa1.netlify.app/','http://localhost:3000'],
+    origin: ['http://localhost:3000','https://kiraa1.netlify.app/',],
     credentials: true 
 }));
 app.use(json());
