@@ -8,7 +8,7 @@ dotenv.config();
 
 const app = express();
 app.use(cors({
-    origin: ['http://localhost:3000','http://localhost:3001','https://kiraa1.netlify.app/'],
+    origin: ['http://localhost:3000','https://kiraa1.netlify.app/'],
     credentials: true 
 }));
 app.use(morgan('tiny'));
