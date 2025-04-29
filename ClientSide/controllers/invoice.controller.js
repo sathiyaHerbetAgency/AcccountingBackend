@@ -27,9 +27,21 @@ import { clientdetails,invoicedetails } from "../models/invoice.model.js";
         const id=req.params.id
         console.log(id)
         try {
-          var invoiceData = await invoicedetails.find({inv_id:id});
-         
-          res.status(200).json(invoiceData)
+          const invoice = await invoicedetails.findOne({ inv_id: id }).lean();
+          if (!invoice) return res.status(404).json({ message: "Invoice not found" });
+      
+          // 2) fetch client by the ref
+          const client = await clientdetails.find({client_id:invoice.client_ref}).lean();
+          if (!client) {
+            // maybe invoice has a stale ref?
+            return res.status(404).json({ message: "Client not found" });
+          }
+
+          const data= {...invoice, ...client[0]}
+          console.log(data)
+      
+          // 3) merge and send
+          res.status(200).json(data);
         } catch(err) {
             console.log(err)
           res.status(400).json('Internal Error')
